@@ -5,7 +5,9 @@ terraform {
       version = "3.26.0"
     }
   }
-  
+
+  required_version = ">= 1.1.0"
+
   cloud {
     organization = "poseidonos"
 
@@ -20,7 +22,7 @@ provider "aws" {
 }
 
 module "s3-webapp" {
-  source  = "app.terraform.io/hashicorp-learn/s3-webapp/aws"
+  source  = "app.terraform.io/poseidonos/s3-webapp/aws"
   name        = var.name
   region = var.region
   prefix = var.prefix
