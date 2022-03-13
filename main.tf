@@ -2,17 +2,15 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "3.26.0"
+      version = "~> 4.0.0"
     }
   }
-
-  required_version = ">= 1.1.0"
 
   cloud {
     organization = "poseidonos"
 
     workspaces {
-      name = "learn-terraform-github-actions"
+      name = "learn-private-module-root"
     }
   }
 }
