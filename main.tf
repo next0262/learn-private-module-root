@@ -1,3 +1,20 @@
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "3.26.0"
+    }
+  }
+  
+  cloud {
+    organization = "poseidonos"
+
+    workspaces {
+      name = "learn-terraform-github-actions"
+    }
+  }
+}
+
 provider "aws" {
   region = var.region
 }
